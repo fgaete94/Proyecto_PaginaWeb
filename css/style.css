@@ -1,0 +1,24 @@
+.card-group{
+    margin-top: 20px;
+    margin-left: 250px;
+}
+.card-body{
+    background-color: #fdf5fb;
+
+}
+.card-header{
+    background-color: #E3F3FD;
+}
+.card-footer{
+    background-color: #E3F3FD;
+}
+.navbar-brand{
+    background-color: #E3F3FD;
+}
+
+#navbar{
+    background-color: #E3F3FD;
+}
+#logoig{
+    margin-top: 60px;
+}
