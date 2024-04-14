@@ -12,13 +12,44 @@
 .card-footer{
     background-color: #E3F3FD;
 }
-.navbar-brand{
+.dropdown-menu{
     background-color: #E3F3FD;
 }
-
 #navbar{
     background-color: #E3F3FD;
 }
 #logoig{
     margin-top: 60px;
+}
+
+#pines{
+    margin: auto;
+    padding: 10px;
+    height: 470px ;
+    width: 610px;
+}
+
+#uniformes{
+    margin: auto;
+    padding: 10px;
+    height: 470px;
+    width: 610px;
+}
+
+#tazas{
+    margin: auto;
+    padding: 10px;
+    height: 470px;
+    width: 610px;
+}
+
+#libros{
+    margin: auto;
+    padding: 10px;
+    height: 470px;
+    width: 610px;
+}
+
+#productos{
+    color: #00bfff;
 }
