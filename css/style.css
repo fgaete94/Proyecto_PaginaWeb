@@ -53,3 +53,15 @@
 #productos{
     color: #00bfff;
 }
+#titProduc{
+    background-color: #fdf5fb;
+}
+.card{
+    background-color: #fdf5fb;
+}
+.precio{
+    font-size:25px ;
+}
+.fecha-pub{
+   vertical-align: text-bottom;
+}
