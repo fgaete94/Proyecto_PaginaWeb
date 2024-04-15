@@ -22,35 +22,19 @@
     margin-top: 60px;
 }
 
-#pines{
+.card-img-producto{
     margin: auto;
     padding: 10px;
-    height: 470px ;
-    width: 610px;
+    height: 400px ;
+    width: 100%;
+}
+.card-img-pub{
+    height:240px;
+    width: 100%;
 }
 
-#uniformes{
-    margin: auto;
-    padding: 10px;
-    height: 470px;
-    width: 610px;
-}
 
-#tazas{
-    margin: auto;
-    padding: 10px;
-    height: 470px;
-    width: 610px;
-}
-
-#libros{
-    margin: auto;
-    padding: 10px;
-    height: 470px;
-    width: 610px;
-}
-
-#productos{
+#activo{
     color: #00bfff;
 }
 #titProduc{
