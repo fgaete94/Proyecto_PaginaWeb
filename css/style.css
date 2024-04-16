@@ -50,7 +50,17 @@
    vertical-align: text-bottom;
 }
 
+/*
 .mr-3{
     height: 80px;
     width: 80px;
+    align-items: start;
+}
+*/
+
+.publicaciones{
+    height: 100px;
+    width: 100px;
+    margin: 3px;
+    padding: 3px;
 }
