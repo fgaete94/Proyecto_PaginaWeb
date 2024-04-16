@@ -49,6 +49,49 @@
 .fecha-pub{
    vertical-align: text-bottom;
 }
+.img-pub{
+    height:320px;
+    width: 320px;
+}
+
+#imag-izq{
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 2px;
+}
+#imag-dere{
+    float: right;
+    padding-left: 20px;
+    padding-top: 2px;
+}
+#p1{
+   
+    text-align: justify;
+    margin: auto;
+    padding:auto;
+    margin-left: auto;
+}
+#p2{
+    padding: auto;
+    text-align: justify;
+    padding:auto;
+    margin-left: auto;
+}
+#p3{
+    padding: auto;
+    text-align: justify;
+    padding:auto;
+    margin-right: auto;
+}
+#titulo-pub{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.img-fondo{
+    height:320px;
+    width: 320px;
+
+}
 
 /*
 .mr-3{
