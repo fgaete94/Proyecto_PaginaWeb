@@ -49,3 +49,8 @@
 .fecha-pub{
    vertical-align: text-bottom;
 }
+
+.mr-3{
+    height: 80px;
+    width: 80px;
+}
