@@ -1,7 +1,10 @@
 .card-group{
     margin-top: 20px;
-    margin-left: 250px;
+    margin-left: 10%;
+    width: 80%;
+    
 }
+
 .card-body{
     background-color: #fdf5fb;
 
@@ -19,7 +22,9 @@
     background-color: #E3F3FD;
 }
 #logoig{
-    margin-top: 60px;
+    margin-top: 40%;
+
+    float:left;
 }
 
 .card-img-producto{
@@ -107,3 +112,9 @@
     margin: 3px;
     padding: 3px;
 }
+#navbar{
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+}
+
