@@ -119,8 +119,16 @@
 }
 
 #qs{
-    margin-left: 60px;
+    margin-left: 10px;
 }
 #titulo-qs{
     padding-bottom:15px;
+}
+
+#nomb-email{
+    padding-left: 0px;
+   
+}
+#for-cont{
+    text-align: left;
 }
