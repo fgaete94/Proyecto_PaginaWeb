@@ -1,6 +1,6 @@
 .card-group{
     margin-top: 20px;
-    margin-left: 10%;
+    margin-left: 20%;
     width: 80%;
     
 }
@@ -118,3 +118,9 @@
 
 }
 
+#qs{
+    margin-left: 60px;
+}
+#titulo-qs{
+    padding-bottom:15px;
+}
