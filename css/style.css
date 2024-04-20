@@ -99,20 +99,13 @@
 
 }
 
-/*
-.mr-3{
-    height: 80px;
-    width: 80px;
-    align-items: start;
-}
-*/
-
 .publicaciones{
     height: 100px;
     width: 100px;
     margin: 3px;
     padding: 3px;
 }
+
 #navbar{
     padding-top: 0px;
     padding-bottom: 0px;
@@ -132,6 +125,11 @@
 }
 #for-cont{
     text-align: left;
+}
+
+.publi{
+    text-align: left;
+    margin-left: 50px;
 }
 
 #btnmodal{
