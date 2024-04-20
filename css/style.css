@@ -95,6 +95,7 @@
 .img-fondo{
     height:320px;
     width: 320px;
+   
 
 }
 
@@ -131,4 +132,14 @@
 }
 #for-cont{
     text-align: left;
+}
+
+#btnmodal{
+    padding: 0px;
+    height:320px;
+    width: 320px;
+    margin: 0px;
+}
+#img-modal{
+    width: 100%;
 }
