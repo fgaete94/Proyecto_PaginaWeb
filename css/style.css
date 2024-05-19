@@ -20,7 +20,15 @@
 }
 #navbar{
     background-color: #E3F3FD;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
+#navbar2{
+    background-color: #E3F3FD;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
 #logoig{
     margin-top: 40%;
     width: 100%;
@@ -108,11 +116,6 @@
     padding: 3px;
 }
 
-#navbar{
-    padding-top: 0px;
-    padding-bottom: 0px;
-
-}
 
 #qs{
     margin-left: 10px;
