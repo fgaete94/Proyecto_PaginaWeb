@@ -42,9 +42,45 @@ function getDolar(done) {
     });
 }
 
-getDolar(data => {
-  console.log(data);
-  /*const valorDolar = data.Dolares[0].Valor;*/
-  document.getElementById("dolar").innerHTML = 'US$' + data.Dolares[0].Valor;
-  document.getElementById("fecha").innerHTML = ',Fecha Obtención:' + data.Dolares[0].Fecha;
+// getDolar(data => {
+//   console.log(data);
+//   /*const valorDolar = data.Dolares[0].Valor;*/
+//   document.getElementById("dolar").innerHTML = 'US$' + data.Dolares[0].Valor;
+//   document.getElementById("fecha").innerHTML = ',Fecha Obtención:' + data.Dolares[0].Fecha;
+// });
+
+function actualizarPrecios(valorDolar, aDolar = true) {
+  const precios = document.querySelectorAll('.precio');
+  precios.forEach(precio => {
+    const precioOriginal = parseFloat(precio.getAttribute('data-precio-original'));
+    if (aDolar) {
+      const precioUSD = (precioOriginal / valorDolar).toFixed(2);
+      precio.textContent = `US$ ${precioUSD}`;
+    } else {
+      precio.textContent = `$${precioOriginal.toLocaleString('es-CL')}`;
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  getDolar(data => {
+    const valorDolar = parseFloat(data.Dolares[0].Valor.replace(',', '.'));
+    document.getElementById('dolar').innerHTML = 'US$' + data.Dolares[0].Valor;
+    document.getElementById('fecha').innerHTML = ', Fecha Obtención: ' + data.Dolares[0].Fecha;
+
+    // Guardar los precios originales en un atributo data
+    const precios = document.querySelectorAll('.precio');
+    precios.forEach(precio => {
+      const precioCLP = parseFloat(precio.textContent.replace('$', '').replace('.', ''));
+      precio.setAttribute('data-precio-original', precioCLP);
+    });
+
+    // Agregar evento al botón para cambiar la divisa
+    document.getElementById('toggleDivisa').addEventListener('click', () => {
+      const esUSD = document.getElementById('toggleDivisa').getAttribute('data-divisa') === 'CLP';
+      actualizarPrecios(valorDolar, esUSD);
+      document.getElementById('toggleDivisa').setAttribute('data-divisa', esUSD ? 'USD' : 'CLP');
+      document.getElementById('toggleDivisa').textContent = esUSD ? 'Mostrar en CLP' : 'Mostrar en USD';
+    });
+  });
 });
