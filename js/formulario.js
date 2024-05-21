@@ -25,7 +25,7 @@ function validarRut(rut) {
 }
 
 $(document).ready(function () {
-    /*
+    /* utilizar esta parte de codigo, solo si el nombre y apellido estan juntos
     // Método de validación personalizado para el nombre completo
     $.validator.addMethod("nombreCompleto", function (value, element) {
         // Dividir el valor en palabras
