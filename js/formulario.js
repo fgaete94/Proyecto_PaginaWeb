@@ -25,7 +25,7 @@ function validarRut(rut) {
 }
 
 $(document).ready(function () {
-    
+    /*
     // Método de validación personalizado para el nombre completo
     $.validator.addMethod("nombreCompleto", function (value, element) {
         // Dividir el valor en palabras
@@ -36,7 +36,7 @@ $(document).ready(function () {
         });
         // Verificar si hay al menos 2 palabras con al menos 2 letras
         return palabrasValidas.length >= 2;
-    }, "Ingresa al menos 2 palabras, cada una con al menos 2 letras.");
+    }, "Ingresa al menos 2 palabras, cada una con al menos 2 letras.");*/
 
     // Método de validación personalizado para la consulta
     $.validator.addMethod("minPalabras", function (value, element) {
@@ -51,7 +51,11 @@ $(document).ready(function () {
         rules: {
             nombre: {
                 required: true,
-                nombreCompleto: true
+                minlength:3
+            },
+            apellido: {
+                required: true,
+                minlength:3                
             },
             rut: {
                 required: true,
@@ -69,8 +73,12 @@ $(document).ready(function () {
         messages: {
             nombre: {
                 required: "Por favor, ingresa tu nombre completo.",
-                nombreCompleto: "Ingresa al menos 2 palabras, cada una con al menos 2 letras."
+                minlength: "Ingresa al menos 3 letras"
             },
+            apellido: {
+                required: "Por favor, ingresa tu apellido completo.",
+                minlength: "Ingresa al menos 3 letras"
+            },            
             rut: {
                 required: "Por favor, ingresa tu RUT.",
                 rutChileno: "Por favor, ingresa un RUT válido."
