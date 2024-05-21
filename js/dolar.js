@@ -65,8 +65,8 @@ function actualizarPrecios(valorDolar, aDolar = true) {
 document.addEventListener('DOMContentLoaded', () => {
   getDolar(data => {
     const valorDolar = parseFloat(data.Dolares[0].Valor.replace(',', '.'));
-    document.getElementById('dolar').innerHTML = 'US$' + data.Dolares[0].Valor;
-    document.getElementById('fecha').innerHTML = ', Fecha Obtención: ' + data.Dolares[0].Fecha;
+    document.getElementById('dolar').innerHTML = 'US$' + data.Dolares[0].Valor + ', Fecha Obtención: ' + data.Dolares[0].Fecha;
+    //document.getElementById('fecha').innerHTML = ', Fecha Obtención: ' + data.Dolares[0].Fecha;
 
     // Guardar los precios originales en un atributo data
     const precios = document.querySelectorAll('.precio');
