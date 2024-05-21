@@ -92,7 +92,9 @@ $(document).ready(function () {
     }, "Por favor, ingresa un RUT válido.");
 });
 $.validator.setDefaults({
-    submitHandler: function () {
+    submitHandler: function (form) {
         alert("Formulario Enviado");
+        form.reset();
     }
 });
+
