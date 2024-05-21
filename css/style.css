@@ -163,3 +163,7 @@ label.error {
     font-weight: bold;
     color: red;
 }
+
+#btnig{
+    cursor: pointer;
+}

@@ -25,6 +25,7 @@ function validarRut(rut) {
 }
 
 $(document).ready(function () {
+    
     // Método de validación personalizado para el nombre completo
     $.validator.addMethod("nombreCompleto", function (value, element) {
         // Dividir el valor en palabras
@@ -89,4 +90,9 @@ $(document).ready(function () {
     $.validator.addMethod("rutChileno", function (value, element) {
         return this.optional(element) || validarRut(value);
     }, "Por favor, ingresa un RUT válido.");
+});
+$.validator.setDefaults({
+    submitHandler: function () {
+        alert("Formulario Enviado");
+    }
 });
