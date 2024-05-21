@@ -94,7 +94,5 @@ $(document).ready(function () {
 $.validator.setDefaults({
     submitHandler: function (form) {
         alert("Formulario Enviado");
-        form.reset();
     }
 });
-
