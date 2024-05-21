@@ -38,7 +38,7 @@
 }
 
 .card-img-producto{
-    margin: auto;
+    
     padding: 10px;
     height: 400px ;
     width: 100%;
@@ -82,21 +82,17 @@
 #p1{
    
     text-align: justify;
-    margin: auto;
-    padding:auto;
-    margin-left: auto;
+  
 }
 #p2{
-    padding: auto;
+    
     text-align: justify;
-    padding:auto;
-    margin-left: auto;
+   
 }
 #p3{
-    padding: auto;
+    
     text-align: justify;
-    padding:auto;
-    margin-right: auto;
+
 }
 #titulo-pub{
     text-align: center;
