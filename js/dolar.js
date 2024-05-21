@@ -17,7 +17,7 @@ getDolar(data=> {
 /*en este codigo a continuacion lo que hacemos es definir 2 URL, donde frente  un error le digo que use una URL secundaria para la obtencion de lo que requiero*/
 function getDolar(done) {
   const primaryUrl = 'https://api.cmfchile.cl/api-sbifv3/recursos_api/dolar?apikey=2547195c57077b59253fcc77d3d749f2ad7d7469&formato=json';
-  const secondaryUrl = 'https://api.cmfchile.cl/api-sbifv3/recursos_api/dolar/2024/05/dias/17?apikey=2547195c57077b59253fcc77d3d749f2ad7d7469&formato=json'; // URL alternativa
+  const secondaryUrl = 'https://api.cmfchile.cl/api-sbifv3/recursos_api/dolar/2024/05/dias/20?apikey=2547195c57077b59253fcc77d3d749f2ad7d7469&formato=json'; // URL alternativa
 
   function fetchDolar(url) {
     return fetch(url)
