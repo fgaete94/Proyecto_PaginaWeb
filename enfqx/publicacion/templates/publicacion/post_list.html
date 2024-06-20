@@ -1,20 +1,24 @@
 {% extends 'publicacion/base2.html' %}
 {% load static %}
 {% block content %}
-{% for post in posts %}
-
-<div class="flex-shrink-0">
-    <a href="{% url 'post_detail' pk=post.pk %}"><img class="publicaciones" src="{ % static 'img/card1.jpg' %}"
-            alt="cirugía"></a>
-
-</div>
-<div class="flex-grow-1 ms-3">
-        <h5><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h5>
-    <p>{{ post.text|linebreaksbr }}</p>
-    <br><br>
-    <div class="date">
-        <p>publicado: {{ post.published_date }}</p>
-    </div>
-</div>
-{% endfor %}
+<ul>
+    {% for post in posts %}
+    <li style="list-style: none; /* Elimina los puntos de la lista */">
+        <div style="display: flex; align-items: flex-start;"> <!-- Contenedor flex para alinear imagen y texto -->
+            <div class="flex-shrink-0" style="margin-right: 10px;"> <!-- Contenedor para la imagen, flex-shrink-0 para mantener tamaño fijo -->
+                <a href="{% url 'post_detail' pk=post.pk %}">
+                    <img class="publicaciones" src="{% static 'css/img/icono_bisturi.svg' %}" alt="cirugía">
+                </a>
+            </div>
+            <div class="flex-grow-1"> <!-- Contenedor para el texto -->
+                <h5><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h5>
+                <p>{{ post.text|truncatewords_html:40 }}</p>
+                <div class="date">
+                    <p>publicado: {{ post.published_date }}</p>
+                </div>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}
