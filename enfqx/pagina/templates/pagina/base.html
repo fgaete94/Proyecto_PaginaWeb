@@ -9,6 +9,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
     <link rel="imagenes" href="{% static 'img/icono_bisturi.svg' %}">
+    <script src="{% static 'js/dolar.js' %}"></script>
+    <link rel="web icon" href="{% static 'img/icono_bisturi.svg' %}"type="svg">
     <title>publicacion</title>
 </head>
 
@@ -39,7 +41,7 @@
                                 <a  class="nav-link active" href="{% url 'post_list'%}">Publicaciones</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="productos.html">Productos</a>
+                                <a class="nav-link" href="{% url 'product_list'%}">Productos</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -89,7 +91,7 @@
                         </li>
                         <li class="nav-link"><a href="{% url 'post_list'%}"
                                 class="nav-link px-2 text-body-secondary">Publicaciones</a></li>
-                        <li class="nav-link"><a href="productos.html"
+                        <li class="nav-link"><a href="{% url 'product_list'%}"
                                 class="nav-link px-2 text-body-secondary">Productos</a></li>
                         <li class="nav-link"><a href="contacto.html"
                                 class="nav-link px-2 text-body-secondary">Contacto</a></li>

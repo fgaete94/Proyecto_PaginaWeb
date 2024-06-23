@@ -1,0 +1,22 @@
+{% extends 'productos/base3.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <h1 id="titProduc">Nuestros Productos</h1>
+    <button id="toggleDivisa" data-divisa="CLP" class="btn btn-primary mb-3">Mostrar en USD</button>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for product in products %}
+        <div class="col">
+            <div class="card">
+                <img src="{{ producto.image.url }}" class="card-img-producto" alt="Pines">
+                <div class="card-body">
+                    <h5 class="producto">{{ producto.name }}</h5>
+                    <p class="precio">${{ producto.price }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
