@@ -1,0 +1,12 @@
+{% extends 'publicacion/base2.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1>Nueva Publicación</h1>
+    <form method="POST" class="post-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button id="guardar" type="submit" class="btn btn-outline-secondary">Guardar</button>
+    </form>
+</div>
+{% endblock %}

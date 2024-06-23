@@ -20,7 +20,7 @@
         <div class="card-header">
             <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
                 <div id="navbar2" class="container-fluid">
-                    <a class="navbar-brand" href="inicio.html">
+                    <a class="navbar-brand" href="{% url 'index' %}">
                         <img src="{% static 'img/Copia de logo enfermería quirófano.svg' %}" alt="Logo" width="30" height="24"
                             class="d-inline-block align-text-top">
                         Enfermería Quirófano
@@ -33,7 +33,7 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="inicio.html">Inicio</a>
+                                <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a id="activo" class="nav-link active" href="{% url 'post_list'%}">Publicaciones</a>
@@ -52,6 +52,11 @@
                                     <li><a class="dropdown-item" href="contacto.html">Contacto</a></li>
                                 </ul>
                             </li>
+                            {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'post_new' %}">Nueva Publicación</a>
+                            </li>
+                            {% endif %}
                             <li class="nav-item">
                                 <div id="dolar"></div>
                             </li>
@@ -63,7 +68,7 @@
         </div>
         <div class="card-body">
             <div class="container-fluid">
-                <h1 id="titProduc">Publicaciones</h1>
+                <h1 id="titProduc"><a href="{% url 'post_list'%}">Publicaciones</a></h1>
                 <div class="publi">
                     <div class="d-flex align-items-center">
                         {% block content %}
@@ -82,7 +87,7 @@
             <div class="container-fluid">
                 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
                     <div class="col-md-3">
-                        <a href="inicio.html" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                        <a href="{% url 'index' %}" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
                             <img src="{% static 'img/Copia de logo enfermería quirófano.svg' %}" alt="Logo" width="30" height="24"
                                 class="d-inline-block align-text-top">
                         </a>
@@ -90,9 +95,9 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                            <li class="nav-link"><a href="inicio.html"
+                            <li class="nav-link"><a href="{% url 'index' %}"
                                     class="nav-link px-2 text-body-secondary">Inicio</a></li>
-                            <li class="nav-link"><a href="publicaciones.html"
+                            <li class="nav-link"><a href="{% url 'post_list'%}"
                                     class="nav-link px-2 text-body-secondary">Publicaciones</a></li>
                             <li class="nav-link"><a href="productos.html"
                                     class="nav-link px-2 text-body-secondary">Productos</a></li>
@@ -103,7 +108,7 @@
 
                     <ul class="nav col-md-3 justify-content-end list-unstyled d-flex">
                         <li class="ms-3"><a class="ig-footer"
-                                href="https://www.instagram.com/enfermeria_quirofano/"><img src="img/iglog.png"
+                                href="https://www.instagram.com/enfermeria_quirofano/"><img src="{% static 'img/iglog.png' %}"
                                     class="bi" width="80" height="80"></a></li>
                     </ul>
                 </footer>

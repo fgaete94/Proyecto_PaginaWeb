@@ -167,6 +167,20 @@ label.error {
 #btnig{
     cursor: pointer;
 }
-.date {
+#date{
     color: #828282;
+    float: right;
+}
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+.save {
+    float: right;
+}
+#editar{
+    float: center;
+    text-align: center;
+}
+#guardar{
+    margin-left: 500px;
 }

@@ -1,0 +1,72 @@
+{% extends 'pagina/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-8">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for post in recent_posts %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <a href="{% url 'post_detail' pk=post.pk %}"> <img src="{{ post.image.url }}" class="d-block w-100" alt="{{ post.title }}" width="467" height="320"></a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+        <div class="col-2">
+            <button id="btnig" type="button" class="btn">
+
+                <a href="https://www.instagram.com/enfermeria_quirofano/" target="_blank"><img id="logoig"
+                        src="{% static 'img/icons8-instagram-50.svg' %}" alt="logo de instagram"></a>
+            </button>
+
+        </div>
+
+
+    </div>
+    <div class="row">
+
+        <div class="col-10">
+            <div class="card-group">
+                {% for post in recent_posts %}
+                <div class="card">
+                    <a href="{% url 'post_detail' pk=post.pk %}">
+                        <img src="{{ post.image.url }}" class="card-img-pub" alt="{{ post.title }}">
+                    </a>
+                    <div class="card-body">
+                        <a href="{% url 'post_detail' pk=post.pk %}">
+                            <h5 class="card-title">{{ post.title|truncatewords_html:6 }}</h5>
+                        </a>
+                        <p class="card-text">{{ post.text|truncatewords_html:10 }}</p>
+                        <p class="fecha-pub"><small class="text-body-secondary">Publicado: {{ post.published_date }}</small></p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-1">
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}
