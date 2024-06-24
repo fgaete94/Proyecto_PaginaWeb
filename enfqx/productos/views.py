@@ -15,6 +15,6 @@ def agregar_producto(request):
         if form.is_valid():
             form.save()
             return redirect('product_list')
-        else:
-            form = ProductoForm()
-        return render(request,'productos/agregar_producto.html',{'form':form})
+    else:
+        form = ProductoForm()
+    return render(request,'productos/agregar_producto.html',{'form':form})

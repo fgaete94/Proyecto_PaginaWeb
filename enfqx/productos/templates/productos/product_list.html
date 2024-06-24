@@ -5,7 +5,7 @@
     <h1 id="titProduc">Nuestros Productos</h1>
     <button id="toggleDivisa" data-divisa="CLP" class="btn btn-primary mb-3">Mostrar en USD</button>
     <div class="row row-cols-1 row-cols-md-2 g-4">
-        {% for product in products %}
+        {% for producto in product %}
         <div class="col">
             <div class="card">
                 <img src="{{ producto.image.url }}" class="card-img-producto" alt="Pines">
