@@ -51,7 +51,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="quienes_somos.html">¿Quiénes Somos?</a></li>
                                     <li><a class="dropdown-item" href="colaboradores.html">Colaboradores</a></li>
-                                    <li><a class="dropdown-item" href="contacto.html">Contacto</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'contacto'%}">Contacto</a></li>
                                 </ul>
                             </li>
                             {% if user.is_authenticated %}
@@ -93,7 +93,7 @@
                                 class="nav-link px-2 text-body-secondary">Publicaciones</a></li>
                         <li class="nav-link"><a href="{% url 'product_list'%}"
                                 class="nav-link px-2 text-body-secondary">Productos</a></li>
-                        <li class="nav-link"><a href="contacto.html"
+                        <li class="nav-link"><a href="{% url 'contacto'%}"
                                 class="nav-link px-2 text-body-secondary">Contacto</a></li>
                     </ul>
                 </div>

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'publicacion',
     'pagina',
     'productos',
+    'contacto',
     
 ]
 

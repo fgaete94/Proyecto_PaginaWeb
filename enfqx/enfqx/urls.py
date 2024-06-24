@@ -24,6 +24,7 @@ urlpatterns = [
     path('index/',include('pagina.urls')),
     path('publicacion/',include('publicacion.urls')),
     path('productos/',include('productos.urls')),
+    path('contacto/',include('contacto.urls')),
     
 
 ] 

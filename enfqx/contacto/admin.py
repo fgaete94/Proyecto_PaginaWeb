@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contacto
+from contacto.models import Contacto
 
 
 admin.site.register(Contacto)
