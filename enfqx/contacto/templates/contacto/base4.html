@@ -9,6 +9,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
     <link rel="imagenes" href="{% static 'img/icono_bisturi.svg' %}">
+    <script src="{% static 'js/dolar.js' %}"></script>
     <script src="{% static 'js/formulario.js' %}"></script>
     <link rel="web icon" href="{% static 'img/icono_bisturi.svg' %}"type="svg">
     <title>Conózcanos</title>
@@ -49,8 +50,8 @@
                                     Conózcanos
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="quienes_somos.html">¿Quiénes Somos?</a></li>
-                                    <li><a class="dropdown-item" href="colaboradores.html">Colaboradores</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'quienes_somos'%}">¿Quiénes Somos?</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'colaboradores'%}">Colaboradores</a></li>
                                     <li><a class="dropdown-item" href="{% url 'contacto'%}">Contacto</a></li>
                                 </ul>
                             </li>
