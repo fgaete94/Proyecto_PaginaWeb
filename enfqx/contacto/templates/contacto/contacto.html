@@ -1,6 +1,8 @@
 {% extends 'contacto/base4.html' %}
 {% load static %}
 {% block content %}
+
+
 <div class="card-body">
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -9,7 +11,32 @@
                 <div id="formulario" class="col-10">
                     <form id="contactForm" method="post">
                         {% csrf_token %}
-                        {{ form.as_p }}
+                        
+                        <div class="mb-3">
+                            <label for="id_nombre" class="form-label">Nombre:</label>
+                            {{ form.nombre }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_apellido" class="form-label">Apellido:</label>
+                            {{ form.apellido }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_rut" class="form-label">RUT:</label>
+                            {{ form.rut }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_email" class="form-label">Correo Electrónico:</label>
+                            {{ form.correo_electronico }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_consulta" class="form-label">Escribe tu consulta:</label>
+                            {{ form.consulta }}
+                        </div>
+                        
                         <button id="guardar" type="submit" class="btn btn-outline-secondary">Guardar</button>
                     </form>
                 </div>
@@ -17,4 +44,21 @@
         </div>
     </div>
 </div>
+  <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- jQuery Validation -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <!-- Script de validación personalizado -->
+    <script src="js/formulario.js"></script>
+
+    <!-- Bootstrap JS (opcional si lo necesitas) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
 {% endblock %}
+
+  
