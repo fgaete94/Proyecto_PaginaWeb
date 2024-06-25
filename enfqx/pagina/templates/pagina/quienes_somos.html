@@ -4,23 +4,24 @@
 <div class="container-fluid-colab">
     <h1>¿Quiénes Somos?</h1>
     <br>
+    {% for qs in autoras %}
     <div id="card-1-colab">
         <div class="card mb-4" style="max-width: 540px;margin: 0 auto;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <img src="{{ auth.image.url }}" class="img-q-somos" alt="img-qs-1">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal-{{ forloop.counter }}">
+                        <img src="{{ qs.image.url }}" class="img-q-somos" alt="img-qs-1">
 
                     </button>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">{{ auth.name }}</h5>
-                        <p class="card-text-lg">{{ auth.text }} </p>
+                        <h5 class="card-title">{{ qs.name }}</h5>
+                        <p class="card-text-lg">{{ qs.text }} </p>
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <div class="modal fade" id="modal-{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -30,7 +31,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ auth.image.url }}"class="img-fluid rounded-start" alt="...">
+                            <img src="{{ qs.image.url }}"class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
@@ -42,6 +43,7 @@
         </div>
 
     </div>
+    {% endfor %}
 </div>
 
 

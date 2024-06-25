@@ -4,11 +4,12 @@
 <div class="container-fluid-colab">
     <h1>Colaboradores</h1>
     <br>
+    {% for colab in colaboradores %}
     <div id="card-1-colab">
         <div class="card mb-4" style="max-width: 540px;margin: 0 auto;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal1">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal-{{ forloop.counter }}">
                         <img src="{{ colab.image.url }}" class="colab-img" alt="img-colab-1">
 
                     </button>
@@ -20,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <div class="modal fade" id="modal-{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -42,5 +43,6 @@
         </div>
 
     </div>
+    {% endfor %}
 </div>
 {% endblock %}
