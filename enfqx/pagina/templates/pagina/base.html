@@ -54,11 +54,7 @@
                                     <li><a class="dropdown-item" href="{% url 'contacto'%}">Contacto</a></li>
                                 </ul>
                             </li>
-                            {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'post_new' %}">Nueva Publicación</a>
-                            </li>
-                            {% endif %}
+
                             <li class="nav-item">
                                 <div id="dolar"></div>
                             </li>
