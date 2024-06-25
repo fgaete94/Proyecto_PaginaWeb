@@ -9,31 +9,8 @@
                 <div id="formulario" class="col-10">
                     <form id="contactForm" method="post">
                         {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
-                        </div>
-                        <div class="mb-3">
-                            <label for="apellido" class="form-label">Apellido:</label>
-                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
-                        </div>
-                        <div class="mb-3">
-                            <label for="rut" class="form-label">RUT:</label>
-                            <input type="text" class="form-control" id="rut" name="rut" placeholder="11111111-1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico:</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="consulta" class="form-label">Escribe tu consulta:</label>
-                            <textarea class="form-control" id="consulta" name="consulta" rows="8"></textarea>
-                        </div>
-                        <br>
-                        <input type="reset" name="limpiar" value="Limpiar">
-                        <input id="enviar" name="enviar" type="submit" value="Enviar">
-                        <br>
-                        <br>
+                        {{ form.as_p }}
+                        <button id="guardar" type="submit" class="btn btn-outline-secondary">Guardar</button>
                     </form>
                 </div>
             </div>
