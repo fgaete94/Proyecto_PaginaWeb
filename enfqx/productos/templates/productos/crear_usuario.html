@@ -1,0 +1,19 @@
+{% extends 'productos/base3.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container-fluid">
+
+    <h1 id="for-cont">Formulario de Contacto</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p}}
+
+        <button id="guardar" type="submit" class="btn btn-outline-secondary">Registrarse</button>
+    </form>
+
+</div>
+
+{% endblock %}

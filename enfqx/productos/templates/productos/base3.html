@@ -59,6 +59,11 @@
                                 <a class="nav-link" href="{% url 'agregar_producto' %}">Agregar Producto</a>
                             </li>
                             {% endif %}
+                            {% if not user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'registrar' %}">Crear Usuario</a>
+                            </li>
+                            {% endif %}
                             <li class="nav-item">
                                 <div id="dolar"></div>
                             </li>
