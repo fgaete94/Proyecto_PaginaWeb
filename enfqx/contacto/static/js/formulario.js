@@ -1,5 +1,5 @@
 
-// Método para validar RUT chileno
+// Método para validar RUT chileno 2
 function validarRut(rut) {
     if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rut)) {
         return false;
