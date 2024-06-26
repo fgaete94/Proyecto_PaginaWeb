@@ -69,7 +69,7 @@
     width: 320px;
 }
 
-#imag-izq{
+#modal_pub{
     float: left;
     padding-right: 20px;
     padding-bottom: 2px;
@@ -82,16 +82,9 @@
 #p1{
    
     text-align: justify;
+    margin-right: 100px;
+    margin-bottom: 40px;
   
-}
-#p2{
-    
-    text-align: justify;
-   
-}
-#p3{
-    
-    text-align: justify;
 
 }
 #titulo-pub{
