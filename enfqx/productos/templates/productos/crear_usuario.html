@@ -2,38 +2,44 @@
 {% load static %}
 {% block content %}
 
+<div class="card-body">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 id="for-cont" class="text-center">Crear Usuario</h1><br><br>
+                <div id="formulario" class="col-12">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <div class="mb-2">
+                            <label for="username" class="form-label">Usuario:</label>
+                            {{ form.username }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <br>
+                            {{ form.email }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="password1" class="form-label">Contraseña:</label>
+                            <br>
+                            {{ form.password1 }}
+                        </div>
 
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-7">
-            <h1 id="for-cont">Crear Usuario</h1><br><br>
-            <div id="formulario" class="col-10">
-                <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Usuario:</label>
-                        {{ form.username }}
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email:</label>
-                        <br>
-                        {{ form.email }}
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="password1" class="form-label">Contraseña:</label>
-                        {{ form.password1 }}
-                    </div>
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Confirma tu contraseña:</label>
+                            <br>
+                            {{ form.password2 }}
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="password2" class="form-label">Confirma tu contraseña:</label>
-                        {{ form.password2 }}
-                    </div>
+                        <div class="text-center">
+                            <button id="guardar" type="submit" class="btn btn-outline-secondary">Registrarse</button>
+                        </div>
 
-                    <button id="guardar" type="submit" class="btn btn-outline-secondary">Registrarse</button>
-
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
