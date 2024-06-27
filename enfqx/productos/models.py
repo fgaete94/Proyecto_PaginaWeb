@@ -21,7 +21,7 @@ class Usuario(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.pk:  # Si el objeto es nuevo, generar hash de la contraseña
-            self.contraseña_hash = hashlib.sha256(self.contraseña_hash.encode()).hexdigest()
+            self.password = hashlib.sha256(self.password.encode()).hexdigest()
         super().save(*args, **kwargs)
 
 

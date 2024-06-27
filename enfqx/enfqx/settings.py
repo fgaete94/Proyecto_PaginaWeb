@@ -132,4 +132,5 @@ MEDIA_ROOT = BASE_DIR /'static/img'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Cuando usuario realice login, se redirige a index
 LOGIN_REDIRECT_URL = '/index/'
