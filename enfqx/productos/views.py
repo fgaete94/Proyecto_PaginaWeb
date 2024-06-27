@@ -1,11 +1,11 @@
-from django.shortcuts import redirect, render
-from .models import Producto
+from django.shortcuts import redirect, render, get_object_or_404
+from .models import Producto,Carrito
 from .forms import ProductoForm
 import hashlib
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import RegistroForm
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def product_list(request):
@@ -36,3 +36,19 @@ def registrar_usuario_seguro(request):
     else:
         form = RegistroForm()
     return render(request, 'productos/crear_usuario.html', {'form': form})
+
+@login_required
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Producto, id=product_id)
+    cart_item, created = Carrito.objects.get_or_create(user=request.user, producto=product)
+    if not created:
+        cart_item.cantidad += 1
+        cart_item.save()
+    return redirect('cart_detail')
+
+@login_required
+def cart_detail(request):
+    cart_items = Carrito.objects.filter(user=request.user)
+    total = sum(item.producto.price * item.cantidad for item in cart_items)
+    context = {'cart_items': cart_items, 'total': total}
+    return render(request, 'productos/cart_detail.html', context)

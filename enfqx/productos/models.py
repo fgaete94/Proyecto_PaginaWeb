@@ -23,3 +23,12 @@ class Usuario(models.Model):
         if not self.pk:  # Si el objeto es nuevo, generar hash de la contraseña
             self.contraseña_hash = hashlib.sha256(self.contraseña_hash.encode()).hexdigest()
         super().save(*args, **kwargs)
+
+
+class Carrito(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return f"{self.cantidad} of {self.producto.name} by {self.user.username}"

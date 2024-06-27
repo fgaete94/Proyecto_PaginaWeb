@@ -12,11 +12,11 @@
                 <div class="card-body">
                     <h5 class="producto">{{ producto.name }}</h5>
                     <p class="precio">${{ producto.price }}</p>
+                    <a href="{% url 'add_to_cart' producto.id %}" class="btn btn-success">Agregar al Carrito</a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
-
 </div>
 {% endblock %}
