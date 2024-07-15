@@ -12,11 +12,37 @@
                 <div class="card-body">
                     <h5 class="producto">{{ producto.name }}</h5>
                     <p class="precio">${{ producto.price }}</p>
-                    <a href="{% url 'add_to_cart' producto.id %}" class="btn btn-success">Agregar al Carrito</a>
+                    <!-- Agregar al carrito usando AJAX -->
+                    <button class="btn btn-success agregar-al-carrito" data-producto-id="{{ producto.id }}">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.agregar-al-carrito').click(function(e) {
+        e.preventDefault();
+        var productId = $(this).data('producto-id');
+        
+        $.ajax({
+            url: '{% url "add_to_cart" 0 %}'.replace('0', productId),
+            method: 'POST',
+            headers: { 'X-Requested-With': 'XMLHttpRequest' },  // Agregar la cabecera para indicar AJAX
+            success: function(response) {
+                alert(response.message);  // Manejar la respuesta JSON aquí
+                // Aquí puedes actualizar la interfaz de usuario según sea necesario
+            },
+            error: function(xhr, status, error) {
+                console.error(error);  // Manejar errores de AJAX aquí
+                alert('Error al agregar el producto al carrito');
+            }
+        });
+    });
+});
+</script>
+
 {% endblock %}

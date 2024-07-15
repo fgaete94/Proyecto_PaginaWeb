@@ -6,6 +6,9 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import RegistroForm
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def product_list(request):
@@ -38,12 +41,23 @@ def registrar_usuario_seguro(request):
     return render(request, 'productos/crear_usuario.html', {'form': form})
 
 @login_required
+@csrf_exempt
+@require_POST
 def add_to_cart(request, product_id):
     product = get_object_or_404(Producto, id=product_id)
     cart_item, created = Carrito.objects.get_or_create(user=request.user, producto=product)
-    if not created:
-        cart_item.cantidad += 1
-        cart_item.save()
+    
+    # Verificar si la solicitud es AJAX
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        # Lógica para agregar el producto al carrito
+        if not created:
+            cart_item.cantidad += 1
+            cart_item.save()
+        
+        # Devolver una respuesta JSON
+        return JsonResponse({'message': 'Producto agregado al carrito correctamente.'})
+    
+    # Si la solicitud no es AJAX, redireccionar a la página del carrito o a donde desees
     return redirect('cart_detail')
 
 @login_required
@@ -52,3 +66,9 @@ def cart_detail(request):
     total = sum(item.producto.price * item.cantidad for item in cart_items)
     context = {'cart_items': cart_items, 'total': total}
     return render(request, 'productos/cart_detail.html', context)
+
+@login_required
+def remove_from_cart(request, cart_item_id):
+    cart_item = get_object_or_404(Carrito, id=cart_item_id, user=request.user)
+    cart_item.delete()
+    return redirect('cart_detail')
