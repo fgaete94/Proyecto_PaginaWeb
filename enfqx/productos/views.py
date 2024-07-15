@@ -40,6 +40,8 @@ def registrar_usuario_seguro(request):
         form = RegistroForm()
     return render(request, 'productos/crear_usuario.html', {'form': form})
 
+
+
 @login_required
 @csrf_exempt
 @require_POST
@@ -72,3 +74,8 @@ def remove_from_cart(request, cart_item_id):
     cart_item = get_object_or_404(Carrito, id=cart_item_id, user=request.user)
     cart_item.delete()
     return redirect('cart_detail')
+
+@login_required
+def index(request):
+    return render(request, 'pagina/index.htm')
+

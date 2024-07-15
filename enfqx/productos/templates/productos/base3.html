@@ -56,7 +56,7 @@
                                     <li><a class="dropdown-item" href="{% url 'contacto'%}">Contacto</a></li>
                                 </ul>
                             </li>
-                            {% if user.is_authenticated %}
+                            {% if user.is_authenticated and user.is_staff %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'agregar_producto' %}">Agregar Producto</a>
                             </li>
@@ -66,15 +66,28 @@
                                 <a class="nav-link" href="{% url 'registrar' %}">Crear Usuario</a>
                             </li>
                             {% endif %}
-                            <li class="nav-item">
-                                <div id="dolar"></div>
-                            </li>
+                            {% if user.is_authenticated %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'cart_detail' %}">
                                     <img src="{% static 'img/cart_icon.svg' %}" alt="Carrito" width="30" height="24">
                                     Carrito
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Hola, {{ user.username }}!</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+                            </li>
+                            {% endif %}
+                            <li class="nav-item">
+                                <div id="dolar"></div>
+                            </li>
+
 
                         </ul>
                     </div>
