@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio.setAttribute('data-precio-original', precioCLP);
     });
 
-    // Obtener el elemento del botón para cambiar la divisa
+    /* Obtener el elemento del botón para cambiar la divisa
     const toggleDivisa = document.getElementById('toggleDivisa');
     if (toggleDivisa) {
       // Agregar evento al botón para cambiar la divisa
@@ -75,6 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     } else {
       console.error("El elemento con id 'toggleDivisa' no se encontró en el DOM.");
-    }
+    }*/
   });
 });
