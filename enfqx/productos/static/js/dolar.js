@@ -2,7 +2,7 @@
 function getDolar(done) {
   // URLs de las APIs principal y secundaria
   const primaryUrl = 'https://api.cmfchile.cl/api-sbifv3/recursos_api/dolar?apikey=2547195c57077b59253fcc77d3d749f2ad7d7469&formato=json';
-  const secondaryUrl = 'https://api.cmfchile.cl/api-sbifv3/recursos_api/dolar/2024/07/dias/15?apikey=2547195c57077b59253fcc77d3d749f2ad7d7469&formato=json';
+  const secondaryUrl = 'https://api.cmfchile.cl/api-sbifv3/recursos_api/dolar/2024/07/dias/17?apikey=2547195c57077b59253fcc77d3d749f2ad7d7469&formato=json';
 
   // Función para hacer la solicitud a la API y procesar la respuesta
   function fetchDolar(url) {
