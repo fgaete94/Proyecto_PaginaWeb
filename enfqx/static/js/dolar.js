@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleDivisa.textContent = esUSD ? 'Mostrar en CLP' : 'Mostrar en USD';
       });
     } else {
-      console.error("El elemento con id 'toggleDivisa' no se encontró en el DOM.");
+      console.warn("El elemento con id 'toggleDivisa' no se encontró en el DOM.");
     }
   });
 });
