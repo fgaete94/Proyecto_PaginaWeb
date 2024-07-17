@@ -42,24 +42,22 @@ def registrar_usuario_seguro(request):
 
 
 
-@login_required
 @csrf_exempt
 @require_POST
 def add_to_cart(request, product_id):
+    if not request.user.is_authenticated:
+        return JsonResponse({'message': 'Debe iniciar sesión para agregar productos al carrito.'}, status=401)
+
     product = get_object_or_404(Producto, id=product_id)
     cart_item, created = Carrito.objects.get_or_create(user=request.user, producto=product)
-    
-    # Verificar si la solicitud es AJAX
+
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-        # Lógica para agregar el producto al carrito
         if not created:
             cart_item.cantidad += 1
             cart_item.save()
-        
-        # Devolver una respuesta JSON
+
         return JsonResponse({'message': 'Producto agregado al carrito correctamente.'})
-    
-    # Si la solicitud no es AJAX, redireccionar a la página del carrito o a donde desees
+
     return redirect('cart_detail')
 
 @login_required
